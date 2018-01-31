@@ -56,7 +56,7 @@
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                             Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -65,6 +65,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="{{route ('users.index')}}">Admin</a></li>
                         @endguest
                     </ul>
                 </div>

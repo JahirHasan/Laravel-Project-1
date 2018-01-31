@@ -27,13 +27,32 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+//  For finding Role OF User
 
     public function role(){
 
         return $this->belongsTo('App\Role');
     }
+
+//   For finding Photo OF User
+
     public function photo(){
 
         return $this->belongsTo('App\Photo');
+    }
+
+    public function isAdmin(){
+
+        if($this->role->name == "Admin" && $this->is_active == 1){
+            return true;
+        }
+        return false;
+    }
+
+//   For finding Posts OF User
+
+    public function posts(){
+
+        return $this->hasMany('App\Post');
     }
 }
