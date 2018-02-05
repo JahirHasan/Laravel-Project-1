@@ -24,7 +24,7 @@
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>{{$post->user->name}}</td>
+                    <td><a href="{{route ('posts.edit',$post->id)}}">{{$post->user->name}}</a></td>
                     <td><img height="200px" width="200px" class="img-responsive" src="{{$post->photo ? $post->photo->file : ''}}" alt="No User Photo"></td>
                     <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
                     <td>{{$post->post_title}}</td>

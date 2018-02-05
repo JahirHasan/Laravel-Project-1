@@ -15,4 +15,12 @@ class Photo extends Model
 
         return $this->upload.$photo;
     }
+
+    public function user(){
+        return $this->hasone('App\User');
+    }
+
+    public function post(){
+        return $this->hasone('App\Post');
+    }
 }

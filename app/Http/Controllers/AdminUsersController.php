@@ -119,15 +119,9 @@ class AdminUsersController extends Controller
 
             $input['photo_id'] = $photo->id;
         }
-        if(trim($request->password)==''){
-            $input = $request->except('password');
-        }
-        else{
-            $input = $request->all();
-            $input['password'] = bcrypt($request->password);
-        }
 
 
+        $input['password'] = bcrypt($request->password);
         $user->update($input);
 
         return redirect ('/admin/users');
